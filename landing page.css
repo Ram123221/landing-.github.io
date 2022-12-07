@@ -1,0 +1,1568 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+/*#9b9b9b*/
+html
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    max-width: 780px;
+    box-shadow: 0 0 1.2rem 1rem rgb(211, 210, 210);
+}
+
+:root
+{
+    --black: black;
+    --white: white;
+    --orangered: orangered;
+    --awesome-grey: #f7f7f7;
+}
+
+/*introduction section*/
+
+header
+{
+    position: relative;
+}
+#fixed-navbar
+{
+    background-color: var(--black);
+    max-width: 780px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 2.7rem 0 2.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: calc(100vh - 60px);
+    z-index: 1;
+}
+
+#icons
+{
+    display: flex;
+    flex: 0.5;
+    justify-content: space-between;
+}
+
+.fontawesome-icon-link
+{
+    color: var(--white);
+}
+
+.fa::before
+{
+    line-height: 5rem;
+    font-size: 1.5rem;
+}
+
+.fontawesome-icon-link .fa:hover
+{
+    color: rgb(233, 64, 64);
+    cursor: pointer;
+}
+
+button
+{
+    text-transform: uppercase;
+    /* font-family: 'Raleway', sans-serif; */
+}
+
+#buy-ticket-btn
+{
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    background-color: var(--orangered);
+    color: var(--white);
+}
+
+#toggle-btn
+{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+}
+
+#toggle-container
+{
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: 0;
+    background-color: rgb(52, 30, 52);
+}
+
+input#toggle-dots /*input[type="checkbox"]*/
+{
+    position: absolute;
+    z-index: 1;
+    width:100%;
+    height:100%;
+    background-color: var(--white);
+    opacity: 0;
+    cursor: pointer;
+}
+/* 
+input[type="checkbox"]:checked #toggle-container span
+{
+    display: block;
+    position: absolute;
+    left: 50%;  
+    width: 3.5rem;
+    height: 0.7rem;
+    background-color: var(--black);
+    border-radius: 2.2rem;
+    transform: translateX(0%)
+} */
+
+#toggle-container span
+{
+    display: block;
+    position: absolute;
+    left: 50%;  
+    width: 3rem;
+    height: 0.5rem;
+    background-color: var(--white);
+    border-radius: 2.2rem;
+    transform: translateX(-50%);
+    transform-origin: 50% 50%;/*by default*/
+    transition-duration: 0.5s;
+}
+
+input[type="checkbox"]:checked + #toggle-container span:first-of-type,
+input[type="checkbox"]:checked + #toggle-container span:last-of-type
+{
+    top: 1.7rem;
+    transform: translateX(-50%) rotate(225deg);
+}
+
+input[type="checkbox"]:checked + #toggle-container span:nth-of-type(2)
+{
+    transform: translateX(-50%) rotate(315deg);
+}
+
+
+#toggle-container span:first-of-type
+{
+    top: 0.6rem;
+}
+
+#toggle-container span:nth-of-type(2)
+{
+    top: 1.7rem;
+}
+
+#toggle-container span:last-of-type
+{
+    top: 2.8rem;
+}
+
+#toggle-icons
+{
+    position: absolute;
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    top: 100%;
+    border-bottom-left-radius: 22px;
+    /* right: -27px; */
+    background-color: rgb(33, 16, 49);
+    left: calc(100% + 27px);
+    transition-duration: 0.5s;
+}
+
+#introduction-container
+{
+    position: relative;
+    height: calc(100vh - 60px);
+    width: 100%;
+    top: 60px;
+    overflow: hidden;
+    /* background-image: url("bg-01-1920x908.jpg"); */
+}
+
+#introduction-container > img
+{
+    transform: scale(1.35);
+}
+
+#introduction-container > img, #records > img, #register-interface > img
+{
+    top: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#introduction
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 6.5rem ;
+    text-align: center;
+}
+
+.date-location
+{
+    color: var(--white);
+}
+
+#strip-thin-bar
+{
+    color: var(--white);
+}
+
+.date-location, #strip-thin-bar
+{
+    font-size: 1.25rem;
+    padding: 0 1rem;
+}
+
+.date-location .fa::before
+{
+    padding-right: 0.8rem;
+    color: var(--orangered);
+}
+
+#event-img1
+{
+    padding-top: 5.1rem;
+    padding-bottom: 3.4rem;
+}
+
+#short-description
+{
+    color: var(--white);
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    height: auto;
+    max-width: 570px;
+    margin: 0 auto;
+    /* min-width: 54rem; */
+}
+
+#first-section-buttons
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px;
+    column-gap: 3.5rem;
+    width: 33.5rem;
+    margin: auto;
+    margin-top: 2.5rem;
+    align-items: center;
+}
+
+.header-btn, .plan-card-btn
+{
+    font-weight: 600;
+    width: 14.75rem;
+    height: 100%;
+    padding: 1.5rem 2.5rem;
+    border-radius: 3rem;
+    border: 2px solid var(--orangered);
+    background-color: transparent;
+    color: var(--white);
+    transition-duration: 0.3s;
+}
+
+.plan-card-btn
+{
+    margin-right: 3rem;
+    margin-top: 2rem;
+    width: 20rem;
+    color: var(--black);
+    margin: 3rem auto;
+}
+
+.active
+{
+    background-color: var(--orangered);
+}
+
+.header-btn:hover, .plan-card-btn:hover, #register-interface button#register-btn:hover
+{
+    background-color: rgb(219, 65, 10);
+}
+
+.plan-card-btn:hover
+{
+    color: var(--white);
+}
+
+#time-container
+{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.time
+{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    display: grid;
+    grid-template-rows: 2.3rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+}
+
+.time span:not(.time span:first-child)/* here first child means text (days,  months,)*/
+{
+    line-height: 8rem;
+    height: 8rem;
+    width: 5rem;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--white);
+    color: #999;
+    border-radius: 5px;
+    font-stretch:condensed;
+}
+
+.time span:nth-child(1)
+{
+    grid-column: 1/3;
+    color: var(--white);
+}
+
+main
+{
+    position: relative;
+    top: 60px;
+}
+
+/*second section(things to be learnt*/
+
+#things-to-be-learnt
+{
+    max-width: 100%;
+    padding-bottom: 4.5rem;
+}
+
+#cards
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card
+{
+    text-align: center;
+    flex: 0.3;
+}
+
+#things-to-be-learnt h1
+{
+    font-size: 5rem;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.card small
+{
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    color: gray;
+}
+
+.card h2
+{
+    font-size: 2.5rem;
+    font-weight: normal;
+    padding: 0.7rem;
+    letter-spacing: 0.05rem;
+}
+
+.card p
+{
+    font-size: 1.6rem;
+    color: #aaa;
+    padding: 2rem 0;
+}
+
+/*third section records containing number display*/
+
+#records
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /* background-image: url("bg-02-1920x526.jpg"); */
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#records > img
+{
+    transform: scale(1.5) translateY(10%);
+    z-index: -1;
+}
+
+#record-holder
+{
+    max-width: 100%;
+    height: auto;
+    padding: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 10rem;
+    row-gap: 4.5rem;
+}
+
+#record-holder span.num-with-plus, #record-holder span.simple-num
+{
+    display: block;
+    text-align: center;
+    font-size: 5.5rem;
+    font-weight: bold;
+    color: var(--orangered);
+}
+
+#record-holder span.num-with-plus:after
+{
+    content:"+";
+}
+
+
+#record-holder span.text-for-num
+{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--white);
+}
+
+/*employee section*/
+#employees
+{
+    width: 100%;
+    /* height: auto; */
+    /* margin-bottom: 4rem; */
+}
+
+#employees-topic
+{
+    text-align: center;
+    margin-top: 7rem;
+    margin-bottom: 3.5rem;
+}
+#employees-topic > h1
+{
+    font-size: 4.5rem;
+    padding-bottom: 2rem;
+}
+
+#employees-topic > p
+{
+    font-size: 1.7rem;
+    color: #bbb;
+}
+
+#employees-details
+{
+    width: 100%;
+    max-width: 110rem;
+    margin: auto;
+}
+
+.employee
+{
+    float: left;
+    width: calc(100%/3);
+    /* max-width: 250px; */
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.employee > img
+{
+    border-radius: 50%;
+}
+
+.employee h3
+{
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+.employee .post
+{
+    font-size: 1.2rem;
+    color: var(--orangered);
+}
+
+.employee p:last-of-type
+{
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: #bbb;
+}
+
+.employee span
+{
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.employee .fa::before
+{
+    font-size: 2rem;
+    color: #bbb;
+}
+
+/*schedule section*/
+#schedule
+{
+    max-width: 100%;
+    clear: left;
+    text-align: center;
+    background-color: var(--awesome-grey);
+    padding: 6rem 3.5rem;
+}
+
+#schedule > h1
+{
+    font-size: 4.7rem;
+    padding-bottom: 3rem;
+}
+
+#schedule > p
+{
+    font-size: 1.5rem;
+    color: #aaa;
+    padding-bottom: 5rem;
+}
+
+#day-container
+{
+    /* padding: 1.5rem; */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content:center;
+    border: 1px solid #aaa;
+    border-radius: 7rem;
+    /* min-width: calc(10rem * 5); */
+    background-color: var(--white);
+}
+
+.day
+{
+    padding: 1rem;
+    text-align: center;
+    width: calc(100% / 5);
+    /* min-width: 10rem; */
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.day > div
+{
+    width: calc(100% - 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.day >div > p:first-child
+{
+    font-size: 2.3rem;
+}
+
+.day > div > p:last-child
+
+{
+    font-size: 1rem;
+}
+
+.day > span:not(.day > span.day-span-active)
+{
+    font-size: 3rem;
+    color: #aaa;
+}
+
+.day-active
+{
+    color: var(--white);
+    border-color: transparent;
+}
+
+.day-span-active
+{
+    color: var(--orangered);
+}
+
+.day-active:nth-child(2)/*I have added an empty div for javascript error handling*/
+{
+    border-top-left-radius: 7rem;
+    border-bottom-left-radius: 7rem;
+}
+
+.day:last-child span, .day:first-child span
+{
+    visibility: hidden;
+}
+
+.day-active
+{
+    background-color: var(--orangered);
+}
+
+.day-active:last-child
+{
+    border-top-right-radius: 7rem;
+    border-bottom-right-radius: 7rem;
+    background-color: var(--orangered);
+}
+
+.schedule-blocks-inner-container:first-of-type
+{
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.schedule-blocks-inner-container:not(.schedule-blocks-inner-container:first-of-type)
+{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.schedule-blocks-inner-container > .time-name h1.am-or-pm
+{
+    font-size: 3.2rem;
+    letter-spacing: 0.3rem;
+}
+
+.schedule-blocks-inner-container > .time-name > p
+{
+    text-transform: uppercase;
+    letter-spacing: 0.6rem;
+    padding: 1.8rem 0;
+}
+
+.schedule-blocks-inner-container .description-toggle
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    border: 1px solid #ccc;
+    padding: 0 2rem;
+    background-color: var(--white);
+    border-radius: 3px;
+    height: min-content;
+    /* transition-duration: 0.5s; */
+}
+
+.description-toggle > div
+{
+   position: relative;
+   height: 50px;
+   width: 100%;
+   /* flex: 0.99; */
+}
+
+.description-toggle > div.arrow
+{
+    display: none;
+}
+
+
+.description-toggle > div > p
+{
+    /* line-height: 100%;
+    height: 100%; */
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    /* height: min-content; */
+    /* transition-duration: 0.5s; */
+}
+
+.description-toggle > p
+{
+    font-size: 1.5rem;
+    color: rgb(150, 146, 146);
+    transition: 0.7s !important;
+    padding: 1.5rem 1rem;
+    height: min-content;
+}
+
+.description-toggle .fa::before, .description-toggle .fa
+{
+    font-size: 2rem;
+}
+
+.description-toggle > div span
+{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.hide
+{
+    visibility: hidden;/*for plus minus sign*/
+    display: none;/*for paragraph*/
+}
+
+.show
+{
+    visibility: visible;
+    display: block;
+}
+
+.hide-p
+{
+    height: 0px !important;/*why find the reason*/
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.show-p
+{
+    height: auto !important;
+}
+
+/*our plans section second last*/
+#our-plans
+{
+    width: 100%;
+    padding-bottom: 13rem;
+    background-color: #eff0f4;
+}
+
+#our-plans > h1
+{
+    font-size: 4.5rem;
+    text-align: center;
+    padding: 3.5rem 0;
+    width: 100%;
+}
+
+#cards-container
+{
+    display: grid;
+    height: auto;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 5rem;
+}
+
+.plan-card
+{
+    /* width: 300px; */
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 300px;
+    min-width: 255px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    background-color: #eff0f4;
+    /* border: 1px solid var(--awesome-grey); */
+    box-shadow: inset 10px 10px 10px rgba(0,0,0,0.05), 15px 15px 15px rgba(0,0,0,0.05), inset -10px -10px 10px rgba(255,255,255,0.9);
+}
+
+.plan-card p:first-child
+{
+    font-size: 3.5rem;
+}
+
+.plan-card p:nth-child(2)
+{
+     font-size: 4.5rem;
+}
+
+.plan-card p:nth-child(3)
+{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.plan-card hr
+{
+   width: 200px;
+   margin: 1.8rem auto;
+   color: #ccc;
+}
+
+.plan-card:nth-child(2) .active
+{
+    color: var(--white);
+}
+
+.plan-card:nth-child(2) .text-active
+{
+    color: var(--orangered);
+}
+
+.card-specs
+{
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    color: #bbb;
+}
+
+.plan-card p:nth-of-type(4)
+{
+    padding: unset;
+}
+
+/*register section*/
+#register-interface
+{
+    background-image: url("bg-04-1920x585.jpg");
+    position: relative;
+    width: 100%;
+    height: 42.4rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+    text-align: center;
+    padding: 10rem 3rem;
+    overflow: hidden;
+}
+
+#register-interface > h1
+{
+    font-size: 4.5rem;
+}
+
+#register-interface > p
+{
+    font-size: 1.7rem;
+    padding: 1.7rem 0;
+    max-width: 700px;
+    margin: auto;
+}
+
+#register-interface button#register-btn
+{
+    padding: 1.5rem 2.5rem;
+    margin-top: 2.8rem;
+    text-transform: uppercase;
+    border-radius: 4rem;
+    color: var(--awesome-grey);
+    background-color: var(--orangered);
+    border-color: transparent;
+}
+
+/*footer*/
+footer
+{
+    position: relative;
+    top: 60px;
+    padding: 10rem 4rem 3.3rem;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+#footer-start-para
+{
+    text-align: center;
+}
+
+#footer-start-para #footer-intense-img + p
+{
+    color: rgb(66, 65, 65);
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
+}
+
+#footer-start-para p:not(#footer-start-para p:first-of-type)
+{
+    font-size: 1.4rem;
+    color: rgb(122, 121, 121);
+    padding-bottom: 1.6rem;
+}
+
+#footer-start-para span.bold
+{
+    color: var(--white);
+    font-weight: bold;
+}
+
+#twitterFeed-and-stuff
+{
+    display: flex;
+    margin-top: 3rem;
+}
+
+#twitter-icons
+{
+    flex: 0.1;
+}
+
+#twitter-icons p .fa::before
+{
+    font-size: 1.8rem;
+    color: rgb(6, 190, 190);
+}
+
+#feed-text
+{
+    flex: 0.35;
+}
+
+#people-say-text
+{
+    flex: 0.55;
+    overflow: hidden;
+}
+
+#people-say-text h1, #feed-text p
+{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+#people-say-text .quotations p:first-of-type
+{
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 2rem 0;
+}
+
+#people-say-text .quotations p:first-of-type::after,
+#people-say-text .quotations p:first-of-type::before
+{
+    content:'"';
+}
+
+#people-say-text .quotations p:last-of-type
+{
+    font-size: 1.5rem;
+    color: rgb(150, 146, 146);
+}
+
+#quotations-container
+{
+    display: flex;
+    height: 13rem;
+}
+
+.quotations
+{
+    position: relative;
+    transition-duration: 0.5s;
+}
+
+.quotations-hide-first, .quotations-hide-second
+{
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    flex: 0;
+}
+
+.quotations-hide-second
+{
+    left: 100%;
+}
+
+.quotations-hide-first
+{
+    left: -100%;
+}
+
+.quotations-show
+{
+    left: 0;
+    /* display: block; */
+}
+
+#small-circles
+{
+    display: flex;
+    justify-content:flex-end;
+}
+
+#people-say-text div#small-circles > span
+{
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    margin-left: 0.8rem;
+    background-color:rgb(66, 65, 65);
+    cursor: pointer;
+}
+
+.circle-active
+{
+    background-color: var(--orangered) !important;
+}
+
+#footer-icons
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    margin: 2.5rem 0 4.5rem;
+}
+
+#footer-icons a
+{
+    width: 4rem;
+    height: 100%;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(21, 21, 21);
+    cursor: pointer;
+}
+
+#footer-icons .fa::before
+{
+    font-size: 1.8rem;
+    line-height: 4rem;
+}
+
+#footer-icons a:first-of-type:hover
+{
+    background-color: rgb(22, 107, 183);
+}
+
+#footer-icons a:nth-of-type(2):hover
+{
+    background-color: aqua;
+}
+
+#footer-icons a:nth-of-type(3):hover
+{
+    background-color: rgb(223, 161, 48);
+}
+
+#footer-icons a:nth-of-type(4):hover
+{
+    background-color: rgb(74, 155, 241);
+}
+
+
+footer #privacy-policy
+{
+    text-align: center;
+    font-size: 1.5rem;
+    color:rgb(66, 65, 65);
+}
+
+footer #privacy-policy a
+{
+    color:rgb(66, 65, 65);
+    text-decoration: none;
+}
+
+@media (min-width: 780px)
+{
+    body,#fixed-navbar
+    {
+        margin: auto;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .time span:not(.time span:first-child)
+    {
+        line-height: 6rem;
+        height: 6rem;
+        width: 4rem;
+        font-size: 3.5rem;
+    }
+    
+    #cards
+    {
+        flex-direction: column;
+        
+    }
+    
+    .card > p
+    {
+        padding-bottom: 5rem;
+        max-width: 50rem;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    #record-holder
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        font-size: 5.5rem;
+    }
+    
+    #record-holder span.num-with-plus, #record-holder span.simple-num
+    {
+        font-size: 3.5rem;
+    }
+    
+    #record-holder span.text-for-num
+    {
+        font-size: 1.4rem;
+    }
+    
+    .employee
+    {
+        width: 100%;
+    }
+    
+    .employee p
+    {
+        max-width: 50rem;
+        margin: auto;
+    }
+    
+    .employee:last-of-type
+    {
+        padding-bottom: 8rem;
+    }
+    
+    #day-container
+    {
+        flex-direction: column;
+        display: block;
+    }
+    
+    .day
+    {
+        margin: auto;
+        width: 100%;
+        height:58px;
+        padding: 2rem;
+        /* display: block; */
+    }
+    
+    .day-active:nth-child(2)
+    {
+        border-top-left-radius: 40rem;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 40rem;
+    }
+    
+    .day-active:last-child
+    {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 40rem;
+        border-bottom-right-radius: 40rem;
+    }
+    
+    .day span
+    {
+        display: none;
+    }
+    
+    #twitterFeed-and-stuff
+    {
+        flex-direction: column;
+        position: relative;
+        padding: 3rem 2rem 0;
+    }
+
+    #twitterFeed-and-stuff #feed-text p
+    {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    #people-say-text h1
+    {
+        padding-top: 4rem;
+    }
+    
+}
+
+@media (min-width: 630px)
+{
+    #toggle-btn
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 630px)
+{
+
+    #fixed-navbar #buy-ticket-btn-container
+    {
+        flex: 0.9;
+        text-align: center;
+    }
+
+    #toggle-btn
+    {
+        flex: 0.1;
+    }
+
+    input[type="checkbox"]:checked + #toggle-container + #toggle-icons
+    {
+        left: calc(-250px + 100% + 27px);
+        /* right: -27px; */
+        /* display: block;  */
+        visibility: visible;
+    }
+
+    #toggle-icons
+    {
+        visibility: hidden;
+    }
+
+   #icons, #intense-img1
+    {
+        display: none;
+    }
+
+    #register-interface button#register-btn
+    {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 767px)  and (min-width: 481px)
+{
+    #short-description
+    {
+        max-width: 420px;
+        min-height: 14rem;
+    }
+
+    #cards-container
+    {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+    
+    .plan-card
+    {
+        /* width: 80%; */
+        max-width: 255px;
+        min-width: 220px;
+    }
+    
+    #register-interface p
+    {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 480px)
+{
+    #introduction
+    {
+        padding: 1.5rem;
+        padding-top: 2rem;
+    }
+
+    img#event-img1
+    {
+        width: 85%;
+        height: 13rem;
+        /* margin: auto; */
+        /* max-width: 37rem;
+        min-width: 19rem; */
+        /* height: 110px; */
+    }
+    
+    p#short-description
+    {
+        /* font-size: 1.4rem; */
+        width: 95%;
+        height: auto;
+        /* margin: auto; */
+        letter-spacing: 0.4px;
+        padding-bottom: 2.2rem;
+        /* height: 17rem; */
+    }
+
+    .time
+    {
+        column-gap: 2px;
+    }
+
+    #schedule
+    {
+        padding: 60px 5px;
+    }
+
+    .description-toggle
+    {
+        padding: 0;
+    }
+
+    .description-toggle > div > p
+    {
+        width: 20rem;
+        left: 0.5rem;
+    }
+
+    #cards-container
+    {
+        margin: 0 5px;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    
+    .plan-card
+    {
+        /* display: flex; */
+        /* width: 225px; */
+        max-width: 325px;
+        min-width: 200px;
+    }
+
+    #register-interface
+    {
+        margin-top: 5rem;
+    }
+
+    #register-interface p
+    {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 375px)
+{
+
+    #event-img1
+    {
+        /* padding: 2rem 0; */
+    }
+
+    #short-description
+    {
+        font-size: 1.3rem;
+    }
+
+    #first-section-buttons
+    {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 14.75rem;
+        row-gap: 2rem;
+        width: 14.75rem;
+        margin-top: 0;
+    }
+
+    #time-container
+    {
+        /* margin: 0; */
+    }
+
+}
+
+@media screen and (min-width: 800px)
+{
+    body, #fixed-navbar
+    {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    #short-description
+    {
+        width: 80%;
+        min-width: 58rem;
+        max-width: 68rem;
+    }
+
+    #first-section-buttons
+    {
+        width: 50.5rem;
+    }
+
+    #first-section-buttons .header-btn
+    {
+        width: 23rem;
+    }
+
+    #record-holder
+    {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        /* font-size: 5.5rem; */
+    }
+
+    #schedule
+    {
+        margin: auto;
+        max-width: 970px;
+    }
+
+    .schedule-blocks-inner-container
+    {
+        display: flex;
+    }
+
+    .schedule-blocks-inner-container .time-name h1.am-or-pm
+    {
+        font-size: 4rem;
+    }
+
+    .schedule-blocks-inner-container .description-toggle > div > p
+    {
+        font-size: 2.4rem;
+    }
+
+    .schedule-blocks-inner-container > *
+    {
+        flex: 1;
+    }
+
+    /* .description-toggle
+    {
+        height: 9.4rem;
+    } */
+
+    .description-toggle 
+    {
+        position: relative;
+    }
+
+    .description-toggle > div.arrow
+    {
+        display: block;
+        position: absolute;
+        border: 14px solid transparent;
+        /* outline: 1px solid gray; */
+        width: 0;
+        height: 0;
+        border-right-color: var(--white);
+        top: 4.6rem;
+        transform: translateY(-50%);
+        left: -28px;
+    }
+
+    .description-toggle > div.arrow:nth-of-type(1)
+    {
+        z-index: 1;
+    }
+
+    .description-toggle > div.arrow:nth-of-type(2)
+    {
+        border-width: 15px;
+        border-right-color: gray;
+        left: -30px;
+        /* z-index: 2; */
+    }
+
+    .description-toggle > div
+    {
+        /* width: 100%; */
+        height: 9.4rem;
+    }
+
+    .description-toggle > div span
+    {
+        transform: translateY(45%);
+    }
+
+    #cards-container
+    {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+    }
+
+    footer
+    {
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+
+    footer > #full-flexing-div
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #footer-start-para
+    {
+        margin-right: 7rem;
+    }
+
+    #twitterFeed-and-stuff
+    {
+        justify-content: space-between;
+        position: relative;
+        /* align-items:flex-start; */
+        margin: 0;
+    }
+
+    #twitter-icons p:first-child
+    {
+        padding-top: 3rem;
+    }
+
+    #feed-text
+    {
+        position: absolute;
+    }
+
+    #twitterFeed-and-stuff > div:first-child
+    {
+        flex: 0.2;
+    }
+
+    #twitterFeed-and-stuff > div:nth-child(3)
+    {
+        flex: 0.35;
+    }
+    #twitterFeed-and-stuff > div:nth-child(4)
+    {
+        flex: 0.45;
+    }
+
+/* 
+    #employees-details
+    {
+        width: 100%;
+        margin: auto;
+    } */
+}
